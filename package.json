@@ -1,0 +1,47 @@
+{
+	"name": "@nathancatania/pi-glean",
+	"version": "0.1.0",
+	"type": "module",
+	"description": "Pi provider for the Glean LLM Gateway.",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nathancatania/pi-glean.git"
+	},
+	"homepage": "https://github.com/nathancatania/pi-glean#readme",
+	"bugs": "https://github.com/nathancatania/pi-glean/issues",
+	"files": [
+		"index.ts",
+		"src",
+		"banner.png"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"keywords": [
+		"pi-package",
+		"pi-extension",
+		"glean",
+		"llm"
+	],
+	"pi": {
+		"extensions": [
+			"./index.ts"
+		]
+	},
+	"engines": {
+		"node": ">=22.19.0"
+	},
+	"scripts": {
+		"check": "tsc --noEmit",
+		"test": "node --test test/*.test.ts"
+	},
+	"peerDependencies": {
+		"@earendil-works/pi-ai": "*",
+		"@earendil-works/pi-coding-agent": "*"
+	},
+	"devDependencies": {
+		"@types/node": "^22.19.0",
+		"typescript": "^5.9.0"
+	}
+}
