@@ -1,6 +1,6 @@
 {
 	"name": "@nathancatania/pi-glean",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"type": "module",
 	"description": "Pi provider for the Glean LLM Gateway.",
 	"license": "MIT",
