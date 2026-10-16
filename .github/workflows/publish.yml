@@ -28,6 +28,19 @@ jobs:
           registry-url: "https://registry.npmjs.org"
           package-manager-cache: false
 
+      - name: Check the npm version
+        run: |
+          NPM_VERSION="$(npm --version)"
+          echo "npm version: ${NPM_VERSION}"
+          if ! node --eval 'const p = process.argv[1].split(".").map(Number)
+          const ok = p[0] > 11 || (p[0] === 11 && p[1] >= 15)
+          process.exit(ok ? 0 : 1)' "${NPM_VERSION}"
+          then
+            echo "Staged publishing needs npm 11.15.0 or later."
+            echo "This runner has npm ${NPM_VERSION}."
+            exit 1
+          fi
+
       - name: Verify the version
         if: github.event_name == 'release'
         env:
