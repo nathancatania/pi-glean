@@ -45,5 +45,15 @@ jobs:
       - name: Run tests
         run: npm test
 
-      - name: Publish to npm
-        run: npm publish
+      - name: Stage the release on npm
+        run: npm stage publish
+
+      - name: Show the approval step
+        run: |
+          {
+            echo "## Approve the staged release"
+            echo ""
+            echo "npm staged the new version."
+            echo "A maintainer must approve the version with 2FA."
+            echo "Open the Staged Packages tab on npmjs.com."
+          } >> "$GITHUB_STEP_SUMMARY"
