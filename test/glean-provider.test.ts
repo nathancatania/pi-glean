@@ -1,7 +1,7 @@
 import assert from "node:assert/strict"
 import { afterEach, test } from "node:test"
 import type { RefreshModelsContext } from "@earendil-works/pi-ai/compat"
-import { refreshGleanModels } from "../src/glean-provider.ts"
+import { refreshGleanModels } from "../src/glean-auth.ts"
 
 const realFetch = globalThis.fetch
 
